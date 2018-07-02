@@ -11,6 +11,7 @@
 
 #import "HSFFloatingView.h"
 #import "AppDelegate.h"
+#import "SecondVC.h"
 
 @interface ViewController ()
 
@@ -37,6 +38,13 @@
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [delegate.window addSubview:self.floatingView];
 }
+
+
+- (IBAction)push:(id)sender {
+    SecondVC *vc = [[SecondVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 #pragma mark 懒加载
 -(HSFFloatingView *)floatingView{
